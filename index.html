@@ -1,0 +1,699 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Amina's Kitchen & Provisions | Authentic African Food & Catering</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        /* Base Styles */
+        :root {
+            --primary: #8B0000; /* Deep Red/Maroon - Palm Oil color association */
+            --secondary: #FFD700; /* Gold/Yellow - Richness & Quality */
+            --dark: #1A1A1A;
+            --light: #FFF8E1; /* Creamy light background */
+            --text: #4a5568;
+            --white: #ffffff;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        body {
+            line-height: 1.6;
+            color: var(--text);
+            background-color: var(--light);
+        }
+
+        .container {
+            width: 90%;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 15px;
+        }
+
+        /* Utility Classes */
+        .btn {
+            display: inline-block;
+            background-color: var(--primary);
+            color: white;
+            padding: 12px 30px;
+            border-radius: 5px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: all 0.3s;
+            border: none;
+            cursor: pointer;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .btn:hover {
+            background-color: #A52A2A;
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(139, 0, 0, 0.3);
+        }
+
+        .section {
+            padding: 100px 0;
+        }
+
+        .section-title {
+            text-align: center;
+            margin-bottom: 60px;
+        }
+
+        .section-title h2 {
+            font-size: 36px;
+            color: var(--dark);
+            margin-bottom: 15px;
+            position: relative;
+            display: inline-block;
+        }
+
+        .section-title h2::after {
+            content: '';
+            position: absolute;
+            left: 50%;
+            bottom: -5px;
+            transform: translateX(-50%);
+            width: 50px;
+            height: 3px;
+            background-color: var(--secondary);
+        }
+
+        /* Header Styles */
+        header {
+            background-color: var(--white);
+            box-shadow: 0 1px 5px rgba(0, 0, 0, 0.05);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        .header-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 15px 0;
+        }
+
+        .logo {
+            font-size: 26px;
+            font-weight: 800;
+            color: var(--primary);
+            text-decoration: none;
+            text-transform: uppercase;
+        }
+
+        .logo span {
+            color: var(--dark);
+            font-weight: 400;
+        }
+
+        nav ul {
+            display: flex;
+            list-style: none;
+        }
+
+        nav ul li a {
+            text-decoration: none;
+            color: var(--dark);
+            font-weight: 500;
+            margin-left: 25px;
+            padding: 5px 0;
+            transition: color 0.3s;
+        }
+
+        nav ul li a:hover {
+            color: var(--primary);
+        }
+
+        .mobile-menu {
+            display: none;
+            font-size: 24px;
+            cursor: pointer;
+        }
+
+        /* Hero Section */
+        .hero {
+            padding: 180px 0 120px;
+            /* Note: Placeholder for a local image, replace with an actual food/catering image */
+            background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('https://placehold.co/1200x600/8B0000/FFF8E1?text=Authentic+African+Cuisine') center/cover no-repeat;
+            text-align: center;
+            color: white;
+        }
+
+        .hero h1 {
+            font-size: 56px;
+            margin-bottom: 20px;
+            line-height: 1.1;
+            text-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
+        }
+
+        .hero p {
+            font-size: 20px;
+            max-width: 800px;
+            margin: 0 auto 40px;
+            font-weight: 300;
+        }
+
+        /* Provisions Section */
+        .provisions {
+            background-color: var(--white);
+        }
+
+        .provisions-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+        }
+
+        .provisions-card {
+            text-align: center;
+            padding: 30px;
+            border: 1px solid #eee;
+            border-radius: 10px;
+            background-color: var(--white);
+            transition: box-shadow 0.3s, transform 0.3s;
+        }
+
+        .provisions-card:hover {
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+            transform: translateY(-5px);
+        }
+
+        .provision-icon {
+            font-size: 50px;
+            color: var(--primary);
+            margin-bottom: 20px;
+        }
+
+        .provisions-card h3 {
+            font-size: 24px;
+            color: var(--dark);
+            margin-bottom: 15px;
+        }
+
+        .provisions-card p {
+            font-size: 16px;
+        }
+
+        /* Catering Section */
+        .catering {
+            background-color: var(--light);
+        }
+
+        .catering-content {
+            display: flex;
+            align-items: center;
+            gap: 40px;
+        }
+
+        .catering-text {
+            flex: 1;
+        }
+
+        .catering-text h3 {
+            font-size: 30px;
+            color: var(--primary);
+            margin-bottom: 20px;
+        }
+
+        .catering-text p {
+            margin-bottom: 20px;
+        }
+
+        .catering-image {
+            flex: 1;
+        }
+
+        .catering-image img {
+            max-width: 100%;
+            border-radius: 10px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+        }
+
+        /* Blog Section CSS */
+        .blog {
+            background-color: var(--white);
+        }
+
+        .blog-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+        }
+
+        .blog-card {
+            background-color: #fff;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+
+        .blog-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+        }
+
+        .blog-image {
+            height: 200px;
+            /* Placeholder for blog image, replace with actual blog post images */
+            background: center/cover no-repeat;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 18px;
+            font-weight: 600;
+            text-shadow: 0 1px 3px rgba(0, 0, 0, 0.5);
+        }
+        
+        /* Specific image backgrounds for placeholders */
+        .blog-image-1 { background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url('https://placehold.co/600x400/8B0000/FFF8E1?text=Palm+Oil+Recipes'); }
+        .blog-image-2 { background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url('https://placehold.co/600x400/8B0000/FFF8E1?text=Eba+Tips'); }
+        .blog-image-3 { background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url('https://placehold.co/600x400/8B0000/FFF8E1?text=Party+Jollof'); }
+
+        .blog-content {
+            padding: 20px;
+        }
+
+        .blog-meta {
+            display: flex;
+            margin-bottom: 10px;
+            font-size: 14px;
+            color: #A0AEC0;
+        }
+
+        .blog-meta span {
+            margin-right: 15px;
+        }
+
+        .blog-content h3 {
+            font-size: 20px;
+            margin-bottom: 10px;
+            color: var(--dark);
+        }
+
+        .read-more {
+            color: var(--primary);
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 14px;
+            display: inline-block;
+            margin-top: 10px;
+        }
+
+
+        /* Contact/CTA Section */
+        .cta-contact {
+            background-color: var(--primary);
+            color: white;
+            padding: 80px 0;
+            text-align: center;
+        }
+
+        .cta-contact h2 {
+            font-size: 40px;
+            margin-bottom: 15px;
+        }
+
+        .cta-contact p {
+            font-size: 18px;
+            margin-bottom: 30px;
+        }
+
+        .cta-contact .btn {
+            background-color: var(--secondary);
+            color: var(--dark);
+        }
+
+        .cta-contact .btn:hover {
+            background-color: var(--white);
+        }
+
+        /* Footer */
+        footer {
+            background-color: var(--dark);
+            color: white;
+            padding: 60px 0 30px;
+        }
+
+        .footer-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 30px;
+            margin-bottom: 40px;
+        }
+
+        .footer-col h3 {
+            font-size: 20px;
+            margin-bottom: 20px;
+            color: var(--secondary);
+        }
+
+        .footer-col ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        .footer-col ul li {
+            margin-bottom: 10px;
+            font-size: 15px;
+        }
+
+        .footer-col ul li a, .footer-col ul li {
+            color: #a0aec0;
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+
+        .footer-col ul li a:hover {
+            color: white;
+        }
+
+        .social-links {
+            margin-top: 20px;
+        }
+
+        .social-links a {
+            display: inline-block;
+            width: 35px;
+            height: 35px;
+            background-color: rgba(255, 255, 255, 0.1);
+            border-radius: 50%;
+            text-align: center;
+            line-height: 35px;
+            margin-right: 10px;
+            color: white;
+            transition: background-color 0.3s;
+        }
+
+        .social-links a:hover {
+            background-color: var(--secondary);
+        }
+
+        .copyright {
+            text-align: center;
+            padding-top: 30px;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            font-size: 14px;
+            color: #a0aec0;
+        }
+
+        /* Responsive Styles */
+        @media (max-width: 900px) {
+            .catering-content {
+                flex-direction: column;
+                text-align: center;
+            }
+            .catering-image {
+                order: -1;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .mobile-menu {
+                display: block;
+            }
+
+            nav ul {
+                display: none;
+                position: absolute;
+                top: 65px;
+                left: 0;
+                width: 100%;
+                background-color: var(--white);
+                flex-direction: column;
+                padding: 10px 0;
+                box-shadow: 0 5px 5px rgba(0, 0, 0, 0.05);
+            }
+
+            nav ul.active {
+                display: flex;
+            }
+
+            nav ul li a {
+                margin: 0;
+                text-align: center;
+                padding: 10px 0;
+                display: block;
+                border-bottom: 1px solid #eee;
+            }
+
+            .hero {
+                padding: 120px 0 80px;
+            }
+
+            .hero h1 {
+                font-size: 38px;
+            }
+
+            .section {
+                padding: 60px 0;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="container header-container">
+            <a href="#" class="logo">Amina's <span>Provisions</span></a>
+            <div class="mobile-menu">
+                <i class="fas fa-bars"></i>
+            </div>
+            <nav>
+                <ul id="nav-links">
+                    <li><a href="#home">Home</a></li>
+                    <li><a href="#provisions">Provisions</a></li>
+                    <li><a href="#catering">Catering</a></li>
+                    <li><a href="#blog">Blog</a></li>
+                    <li><a href="#contact" class="btn">Order Now</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <section class="hero" id="home">
+        <div class="container">
+            <h1>Authentic African Flavors, Sourced with Care</h1>
+            <p>From richly-flavored Palm Oil and premium Garri to full-service catering, we bring the taste of home to your table.</p>
+            <a href="#provisions" class="btn" style="margin-right: 15px;">Shop Provisions</a>
+            <a href="#catering" class="btn" style="background-color: var(--secondary); color: var(--dark);">Book Catering</a>
+        </div>
+    </section>
+
+    <section class="section provisions" id="provisions">
+        <div class="container">
+            <div class="section-title">
+                <h2>Our Premium Provisions</h2>
+                <p>High-quality, farm-sourced ingredients essential for your favorite West African meals.</p>
+            </div>
+            <div class="provisions-grid">
+                <div class="provisions-card">
+                    <div class="provision-icon">
+                        <i class="fas fa-oil-can"></i>
+                    </div>
+                    <h3>Rich Palm Oil</h3>
+                    <p>100% pure, unadulterated red palm oil with a deep color and savory flavor, perfect for stews, soups, and Jollof rice.</p>
+                </div>
+                <div class="provisions-card">
+                    <div class="provision-icon">
+                        <i class="fas fa-seedling"></i>
+                    </div>
+                    <h3>Premium Garri</h3>
+                    <p>Finely processed cassava granules, available in Ijebu (sour) and Yellow (sweet) varieties. Ideal for Eba or soaking.</p>
+                </div>
+                <div class="provisions-card">
+                    <div class="provision-icon">
+                        <i class="fas fa-pepper-hot"></i>
+                    </div>
+                    <h3>Local Spices & More</h3>
+                    <p>Check out our selection of dried fish, crayfish, pepper, and other key ingredients to complete your pantry.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="section catering" id="catering">
+        <div class="container">
+            <div class="section-title">
+                <h2>Catering Services</h2>
+                <p>Let us handle the cooking for your next event, with authentic dishes prepared for a crowd.</p>
+            </div>
+            <div class="catering-content">
+                <div class="catering-text">
+                    <h3>Full-Service Event Catering</h3>
+                    <p>Planning a wedding, corporate event, or a large family gathering? Amina’s Kitchen offers bespoke catering packages featuring classic dishes like Jollof Rice, Suya, Fried Plantain, Egusi soup, and more.</p>
+                    <ul>
+                        <li><i class="fas fa-check-circle" style="color: var(--primary); margin-right: 8px;"></i> Customizable Menu Options</li>
+                        <li><i class="fas fa-check-circle" style="color: var(--primary); margin-right: 8px;"></i> Professional Service Staff</li>
+                        <li><i class="fas fa-check-circle" style="color: var(--primary); margin-right: 8px;"></i> Delivery and Setup Included</li>
+                    </ul>
+                    <a href="#contact" class="btn" style="margin-top: 20px;">Inquire About Catering</a>
+                </div>
+                <div class="catering-image">
+                    <img src="https://placehold.co/600x400/8B0000/FFF8E1?text=Catering+Platter" alt="Platter of Jollof Rice, Chicken, and Plantain">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="section blog" id="blog">
+        <div class="container">
+            <div class="section-title">
+                <h2>Amina's Kitchen Blog</h2>
+                <p>Tips, recipes, and stories from the heart of African cuisine.</p>
+            </div>
+            <div class="blog-grid">
+                <div class="blog-card">
+                    <div class="blog-image blog-image-1">
+                        How to Select Quality Palm Oil
+                    </div>
+                    <div class="blog-content">
+                        <div class="blog-meta">
+                            <span><i class="fas fa-calendar-alt"></i> Sep 16, 2025</span>
+                            <span><i class="fas fa-utensils"></i> Provisions</span>
+                        </div>
+                        <h3>The Secret to Richer Stews: Choosing the Right Palm Oil</h3>
+                        <p>Learn what to look for—color, aroma, and source—to ensure your red palm oil brings out the best in your soups.</p>
+                        <a href="#" class="read-more">Read More <i class="fas fa-arrow-right"></i></a>
+                    </div>
+                </div>
+                <div class="blog-card">
+                    <div class="blog-image blog-image-2">
+                        Garri Making Tips
+                    </div>
+                    <div class="blog-content">
+                        <div class="blog-meta">
+                            <span><i class="fas fa-calendar-alt"></i> Sep 15, 2025</span>
+                            <span><i class="fas fa-utensils"></i> Ingredients</span>
+                        </div>
+                        <h3>Eba Perfection: 3 Simple Tips for Smooth Garri Swallows</h3>
+                        <p>Tired of lumpy Eba? Follow these easy steps to get a perfectly smooth, consistent, and fluffy cassava swallow every time.</p>
+                        <a href="#" class="read-more">Read More <i class="fas fa-arrow-right"></i></a>
+                    </div>
+                </div>
+                <div class="blog-card">
+                    <div class="blog-image blog-image-3">
+                        Party Jollof Recipe
+                    </div>
+                    <div class="blog-content">
+                        <div class="blog-meta">
+                            <span><i class="fas fa-calendar-alt"></i> Sep 18, 2025</span>
+                            <span><i class="fas fa-utensils"></i> Catering</span>
+                        </div>
+                        <h3>Our Signature Party Jollof Rice Recipe Revealed!</h3>
+                        <p>Get a glimpse into the cooking methods and special ingredients we use to create that smoky, irresistible Jollof taste.</p>
+                        <a href="#" class="read-more">Read More <i class="fas fa-arrow-right"></i></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="cta-contact" id="contact">
+        <div class="container">
+            <h2>Ready to Taste the Difference?</h2>
+            <p>Order your provisions or book your catering consultation today. **Message us instantly on WhatsApp!**</p>
+            <a href="#" id="whatsapp-link" class="btn">
+                <i class="fab fa-whatsapp"></i> Message Us on WhatsApp
+            </a>
+            <a href="tel:1234567890" class="btn" style="margin-left: 15px;">
+                <i class="fas fa-phone"></i> Call Us: 7032864003
+            </a>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-col">
+                    <h3>Amina's Provisions</h3>
+                    <p>Bringing authentic African quality from our kitchen to yours.</p>
+                    <div class="social-links">
+                        <a href="#"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                    </div>
+                </div>
+                <div class="footer-col">
+                    <h3>Quick Links</h3>
+                    <ul>
+                        <li><a href="#home">Home</a></li>
+                        <li><a href="#provisions">Provisions</a></li>
+                        <li><a href="#catering">Catering</a></li>
+                        <li><a href="#blog">Blog</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h3>Provisions</h3>
+                    <ul>
+                        <li><a href="#">Palm Oil</a></li>
+                        <li><a href="#">Garri</a></li>
+                        <li><a href="#">Spices</a></li>
+                        <li><a href="#">Wholesale</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h3>Contact Info</h3>
+                    <ul>
+                        <li><i class="fas fa-map-marker-alt"></i> Farin Wata Street Jos</li>
+                        <li><i class="fas fa-phone"></i> 7032864003</li>
+                        <li><i class="fas fa-envelope"></i> info@aminaskitchen.com</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="copyright">
+                <p>&copy; 2025 Amina's Kitchen & Provisions. All Rights Reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Set the WhatsApp Number here
+        const WHATSAPP_NUMBER = '7032864003'; // Replace with the actual phone number
+        const WHATSAPP_MESSAGE = encodeURIComponent("Hello Amina's Kitchen, I'd like to inquire about provisions/catering.");
+
+        // Mobile Menu Toggle
+        document.querySelector('.mobile-menu').addEventListener('click', function() {
+            document.querySelector('nav ul').classList.toggle('active');
+        });
+
+        // Smooth Scrolling for Anchor Links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+
+                const targetId = this.getAttribute('href');
+                if (targetId === '#') return;
+
+                const targetElement = document.querySelector(targetId);
+                if (targetElement) {
+                    // Adjust scroll position slightly for the fixed header (65px is approximate header height)
+                    window.scrollTo({
+                        top: targetElement.offsetTop - 65,
+                        behavior: 'smooth'
+                    });
+
+                    // Close mobile menu after clicking a link
+                    document.querySelector('nav ul').classList.remove('active');
+                }
+            });
+        });
+
+        // WhatsApp Link Feature (New JS addition)
+        document.getElementById('whatsapp-link').addEventListener('click', function(e) {
+            e.preventDefault();
+            const whatsappURL = `https://wa.me/${7032864003}?text=${WHATSAPP_MESSAGE}`;
+            window.open(whatsappURL, '_blank');
+        });
+    </script>
+</body>
+</html>
